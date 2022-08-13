@@ -1,25 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import ReactWeather, { useOpenWeather } from 'react-open-weather';
+import React, { useState, useEffect } from 'react'
+import { Form, Card, Button, Col, Row } from 'react-bootstrap'
+
 
 function App() {
+
+  const [date, setDate] = useState(new Date())
+
+
+  const { data, isLoading, errorMessage } = useOpenWeather({
+    key: process.env.REACT_APP_WEATHER_API,
+    lat: '37',
+    lon: '-87',
+    lang: 'en',
+    unit: 'imperial'
+  })
+
+  useEffect(() => {
+    const timer = setInterval(()=>setDate(new Date()), 1000)
+    return function cleanup() {
+      clearInterval(timer)
+    }
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+      <ReactWeather
+        isLoading={isLoading}
+        errorMessage={errorMessage}
+        data={data}
+        lang="en"
+        locationLabel="Lexington, KY"
+        unitsLabels={{ temperature: 'F', windSpeed: 'mph' }}
+        showForecast
+      />
     </div>
-  );
+  )
 }
 
 export default App;
