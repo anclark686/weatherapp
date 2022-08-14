@@ -65,7 +65,7 @@ function App() {
   return (
     <div className="App">
       <Card className="zipCard">
-        <h1>Weather App</h1>
+        <h1>Reyaly Weather</h1>
         <p>{msg}</p>
         <Form>
           <Form.Group as={Row} className="mb-3">
