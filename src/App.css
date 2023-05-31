@@ -1,20 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
 .App {
   text-align: center;
   color: white;
-  font-family: Helvetica, sans-serif;
-  background-image: linear-gradient(to bottom left, #04A7F9, #0181C2);
+  font-family: 'Poppins', sans-serif;
+  /* background-image: linear-gradient(to bottom left, #4065CF, #0181C2); */
+  background-color: #4065CF;
 }
 
 .card {
-  background-image: linear-gradient(to bottom left, #04A7F9, #0181C2);
+  background-image: url(./assets/sky.png);
+  background-size: cover;
+  background-position: top;
+  color: black;
+  padding: 20px;
+}
+
+h1 {
+  background-color: #F9FFFF;
+  width: 25%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+.btn-light {
+  background-color: #F9FFFF;
 }
 
 .label {
   width: 50%;
+  margin-left: auto;
+  text-align: right;
 }
 
-.input {
-  width: 75%;
+.form-control {
+  width: 25% !important;
+  margin-right: auto;
 }
 
 .dateTime {

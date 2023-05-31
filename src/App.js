@@ -68,13 +68,14 @@ function App() {
         <h1>Reyaly Weather</h1>
         <p>{msg}</p>
         <Form>
-          <Form.Group as={Row} className="mb-3">
-            <Form.Label column sm="2" className="label">Zip Code or City, State</Form.Label>
+          <Form.Group as={Row} className="mb-2">
+            <Form.Label column sm="6" className="label">Zip Code or City, State</Form.Label>
             <Col>
               <Form.Control 
                 type="text" 
                 placeholder="12345" 
-                className="input"
+                className="input zip-input"
+                sm="6"
                 onChange={(e) => setZip(e.target.value)}/>
             </Col>
           </Form.Group>
